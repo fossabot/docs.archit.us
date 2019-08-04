@@ -1,0 +1,10 @@
+[build]
+  command = "gatsby build"
+  publish = "public/"
+
+# Redirect default Netlify subdomain to primary domain
+[[redirects]]
+  from = "https://architus-docs.netlify.com/*"
+  to = "https://docs.archit.us/:splat"
+  status = 301
+  force = true

@@ -1,0 +1,102 @@
+@import "../../scss/colors";
+@import "../../scss/theme";
+@import "../../scss/media";
+
+%base-horizontal-container {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    align-items: stretch;
+    height: auto;
+    position: relative;
+}
+
+.docs-root {
+    @extend %base-horizontal-container;
+
+    $this: &;
+    $collapse-breakpoint: sm;
+
+    overflow: hidden;
+    pointer-events: none;
+
+    & > * {
+        pointer-events: initial;
+    }
+
+    &--overlay-button {
+        @extend %button-blank;
+        @include transitions("opacity");
+        padding: 0 !important;
+        opacity: 0;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        content: " ";
+        z-index: 1000;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(black, 0.5);
+        pointer-events: none;
+        cursor: default !important;
+    }
+
+    @include respond-below($collapse-breakpoint) {
+        &.show-drawer {
+            #{$this}--overlay-button {
+                pointer-events: initial;
+                opacity: 1;
+            }
+
+            #{$this}--nav {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    }
+
+    &--main {
+        @extend %custom-scrollbar;
+
+        overflow-y: auto;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+
+        & > *:not(.footer) {
+            flex-grow: 1;
+
+            @include respond-above($collapse-breakpoint) {
+                padding-left: 1.5rem;
+            }
+        }
+
+        & > .footer {
+            flex-grow: 0;
+        }
+    }
+
+    &--nav {
+        @extend %custom-scrollbar;
+        @include transitions("transform, opacity");
+
+        background-color: $light-300;
+        border-right: 1px solid $light-200;
+        flex-basis: 325px;
+        flex-shrink: 0;
+        overflow-y: auto;
+
+        @include respond-below($collapse-breakpoint) {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: 1030;
+            transform: translateX(-100%);
+            opacity: 0;
+            width: 350px;
+        }
+    }
+}

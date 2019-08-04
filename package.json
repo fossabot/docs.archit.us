@@ -1,0 +1,75 @@
+{
+  "name": "docs.archit.us",
+  "description": "General purpose Discord bot supporting advanced role management, custom emotes for non-nitro users, configurable response commands, and more.",
+  "version": "1.0.0",
+  "author": "architus",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-brands-svg-icons": "^5.9.0",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@mdx-js/mdx": "^1.0.27",
+    "@mdx-js/react": "^1.0.27",
+    "bootstrap": "^4.3.1",
+    "classnames": "^2.2.6",
+    "gatsby": "^2.13.9",
+    "gatsby-image": "^2.2.4",
+    "gatsby-plugin-catch-links": "^2.1.0",
+    "gatsby-plugin-mdx": "^1.0.13",
+    "gatsby-plugin-nprogress": "^2.1.0",
+    "gatsby-plugin-offline": "^2.2.1",
+    "gatsby-plugin-react-helmet": "^3.1.0",
+    "gatsby-plugin-react-svg": "^2.0.0-beta1",
+    "gatsby-plugin-remove-trailing-slashes": "^2.1.0",
+    "gatsby-plugin-sass": "^2.1.0",
+    "gatsby-plugin-sharp": "^2.2.8",
+    "gatsby-plugin-sitemap": "^2.2.1",
+    "gatsby-remark-images": "^3.1.6",
+    "gatsby-remark-prismjs": "^3.3.4",
+    "gatsby-remark-responsive-iframe": "^2.2.1",
+    "gatsby-remark-slug": "^0.1.0",
+    "gatsby-remark-smartypants": "^2.1.0",
+    "gatsby-source-filesystem": "^2.1.2",
+    "gatsby-transformer-remark": "^2.6.1",
+    "gatsby-transformer-sharp": "^2.2.1",
+    "prismjs": "^1.17.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.9",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "babel-preset-gatsby": "^0.2.1",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.18.2"
+  },
+  "keywords": [
+    "docs",
+    "gatsby",
+    "mdx",
+    "react",
+    "discord-bot"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "lint": "eslint ./src/**/*.js ./src/**/*.jsx",
+    "start": "npm run develop",
+    "serve": "gatsby serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/architus/docs.archit.us"
+  },
+  "bugs": {
+    "url": "https://github.com/architus/docs.archit.us/issues"
+  }
+}

@@ -1,0 +1,13 @@
+@import "../../scss/colors";
+
+.docs-breadcrumb {
+    margin-bottom: 0.5rem;
+
+    &--icon {
+        font-size: 40%;
+        color: rgba($-dark, 0.6);
+        margin-left: 0.6rem;
+        margin-right: 0.6rem;
+        vertical-align: 3px;
+    }
+}
