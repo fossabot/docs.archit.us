@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import { graphql } from "gatsby";
 import { isDefined } from "utility";
 
@@ -46,20 +47,21 @@ function DocsPageTemplate({ data, pageContext, location }) {
   ) : (
     <div dangerouslySetInnerHTML={{ __html: content }} />
   );
+  const toc = !noTOC ? <TableOfContents headers={tableOfContents} /> : null;
 
   return (
     <Layout title={isDefined(shortTitle) ? shortTitle : title}>
       <article className="container docs-root--content">
         {!noBreadcrumb ? <Breadcrumb location={location} /> : null}
         <h1>{title}</h1>
-        {!noTOC ? (
-          <div className="toc-wrapper">
-            <div className="docs-content">{docContent}</div>
-            <TableOfContents headers={tableOfContents} />
-          </div>
-        ) : (
+        <div
+          className={classNames("docs-content--wrapper", {
+            "with-toc": !noTOC
+          })}
+        >
           <div className="docs-content">{docContent}</div>
-        )}
+          <div>{toc}</div>
+        </div>
       </article>
     </Layout>
   );

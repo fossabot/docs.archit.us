@@ -3,6 +3,8 @@ import classNames from "classnames";
 
 import Icon from "components/Icon";
 
+import "./style.scss";
+
 function createHeading({ component: Component, rightLink = false }) {
   return ({ children, id, ...rest }) => {
     const link = (
@@ -14,11 +16,13 @@ function createHeading({ component: Component, rightLink = false }) {
       </a>
     );
     return (
-      <Component {...rest} id={id}>
-        {rightLink ? null : link}
-        {children}
-        {rightLink ? link : null}
-      </Component>
+      <div className="anchor-wrapper">
+        <a className="anchor" name={id}> </a>
+        <Component {...rest}>
+          {children}
+          {link}
+        </Component>
+      </div>
     );
   };
 }

@@ -1,0 +1,84 @@
+@import "../../scss/colors";
+
+@mixin right {
+    margin-left: 0.5em;
+    display: inline-block;
+
+    span {
+        vertical-align: 0.275rem;
+    }
+}
+
+@mixin left {
+    position: absolute;
+    margin-left: -1em;
+    padding-right: 0.5em;
+    transform: translateX(-8px);
+
+    span {
+        vertical-align: -0.2em;
+    }
+}
+
+@mixin right-active {
+    transform: translateX(0.25em);
+}
+
+@mixin left-active {
+    margin-left: -1.125em !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    .heading-link {
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        font-stretch: normal;
+        font-size: 1em;
+        line-height: inherit;
+        opacity: 0;
+        color: $link-color;
+        border: none !important;
+        transition: all 0.25ms cubic-bezier();
+        font-size: 70%;
+        left: 0;
+
+        &:not(.right) {
+            @media (max-width: 1599.99px) {
+                @include right;
+            }
+            @media (min-width: 1600px) {
+                @include left;
+            }
+        }
+
+        &.right {
+            @include right;
+        }
+
+        &:hover {
+            opacity: 0.9 !important;
+        }
+    }
+
+    &:hover > .heading-link,
+    .heading-link:focus {
+        &:not(.right) {
+            @media (max-width: 1599.99px) {
+                @include right-active;
+            }
+            @media (min-width: 1600px) {
+                @include left-active;
+            }
+        }
+        &.right {
+            @include right-active;
+        }
+        opacity: 0.5;
+    }
+}

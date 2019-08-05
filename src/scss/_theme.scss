@@ -1,8 +1,14 @@
 @import "./colors";
 @import "./util";
 
+$drop-shadow-0: 0 1px 3px rgba(black, 0.12), 0 1px 2px rgba(black, 0.24);
+$drop-shadow-1: 0 3px 6px rgba(black, 0.25), 0 3px 6px rgba(black, 0.22);
+$drop-shadow-2: 0 10px 20px rgba(black, 0.16), 0 6px 6px rgba(black, 0.23);
+$drop-shadow-3: 0 14px 28px rgba(black, 0.25), 0 10px 10px rgba(black, 0.22);
+
 $drop-shadow: 0 4px 12px 0 rgba(black, 0.15);
 $drop-shadow-slight: 0 2px 8px 0 rgba(black, 0.3);
+
 $border-radius: 8px;
 $border-radius-sm: 4px;
 $jumbotron-background: darken($-light, 5%);

@@ -22,7 +22,7 @@
         margin: 0 auto;
     }
 
-    @include respond-below(lg) {
+    @include respond-below(md) {
         text-align: center;
 
         hr {

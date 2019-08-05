@@ -16,9 +16,7 @@
 
     $this: &;
     $collapse-breakpoint: sm;
-
-    overflow: hidden;
-    pointer-events: none;
+    position: relative;
 
     & > * {
         pointer-events: initial;
@@ -58,9 +56,6 @@
     }
 
     &--main {
-        @extend %custom-scrollbar;
-
-        overflow-y: auto;
         flex-grow: 1;
         display: flex;
         flex-direction: column;
@@ -76,24 +71,34 @@
         & > .footer {
             flex-grow: 0;
         }
+        margin-left: 325px;
+
+        @include respond-below($collapse-breakpoint) {
+            margin-left: 0;
+        }
     }
 
     &--nav {
         @extend %custom-scrollbar;
         @include transitions("transform, opacity");
 
+        height: 100%;
+        width: 325px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        padding-top: 60px;
+
         background-color: $light-300;
         border-right: 1px solid $light-200;
-        flex-basis: 325px;
-        flex-shrink: 0;
+        overflow-x: hidden;
         overflow-y: auto;
 
         @include respond-below($collapse-breakpoint) {
             height: 100%;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            z-index: 1030;
+            z-index: 1010;
             transform: translateX(-100%);
             opacity: 0;
             width: 350px;
